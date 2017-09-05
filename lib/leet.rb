@@ -1,19 +1,18 @@
 require 'pry'
 
 def leetspeak(phrase)
-  phrasesplit = phrase.split("").map do |letter|
-    if letter == "e"
-      letter = 3
-    elsif letter == "o"
-      letter = 0
-    elsif letter == "I"
-      letter = 1
-    elsif letter == "s"
-      letter = "z"
+  phrase_split = phrase.split(" ").map do |word|
+    if word[0] == "s"
+      first_s = word.slice!(0)
+      first_s + word_leet(word)
     else
-      letter
+      word_leet(word)
     end
   end
+  phrase_split.join(" ")
+end
 
-  phrasesplit.join("")
+def word_leet(word)
+  leet_rules = { 'e' => 3, 'o' => 0, "I" => 1, "s" => "z"}
+  word.chars.map{ |letter| leet_rules.key?(letter) && word[0] ? leet_rules[letter] : letter}.join
 end

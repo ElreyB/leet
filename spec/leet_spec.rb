@@ -23,12 +23,12 @@ describe('#leetspeak') do
     expect(leetspeak("roses")).to eq "r0z3z"
   end
 
-  # it('does NOT replace the first letter when it is an s') do
-  #   expect(leetspeak("sassafrass")).to(eq("sazzafrazz"))
-  # end
-  #
-  # it('replaces letters correctly in a string of words') do
-  #   expect(leetspeak("I scream you scream we all scream for raspberry ice cream.")).to(eq("1 scr3am y0u scr3am w3 all scr3am f0r razpb3rry ic3 cr3am"))
-  # end
+  it('does NOT replace the first letter when it is an s') do
+    expect(leetspeak("sassafrass")).to eq "sazzafrazz"
+  end
+
+  it('replaces letters correctly in a string of words') do
+    expect(leetspeak("I scream you scream we all scream for raspberry ice cream.")).to eq"1 scr3am y0u scr3am w3 all scr3am f0r razpb3rry ic3 cr3am."
+  end
 
 end
