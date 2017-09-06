@@ -14,5 +14,5 @@ end
 
 def word_leet(word)
   leet_rules = { 'e' => 3, 'o' => 0, "I" => 1, "s" => "z"}
-  word.chars.map{ |letter| leet_rules.key?(letter) && word[0] ? leet_rules[letter] : letter}.join
+  word.chars.map{ |letter| leet_rules.key?(letter) ? leet_rules[letter] : letter}.join
 end
